@@ -1,0 +1,27 @@
+<resources>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="app_name">VK|Converter</string>
+    <string name="convert">Конвертировать</string>
+    <string name="summ">Сумма</string>
+    <string name="api_doesnt_work">Апи в данный момент не работает</string>
+    <string name="internet_isnt_avalible">Отсвутствует подключение к интернету</string>
+    <string name="currency_converter">Конвертор валют</string>
+    <string name="result">%1$.2f Руб.</string>
+    <string name="invalid_input">Заполните поле</string>
+    <string name="error">Ошибка</string>
+    <string name="selected_currency">Вы выбрали: %1$s</string>
+
+    <string-array name="Currencies">
+        <item>"USD"</item>
+        <item>"EUR"</item>
+        <item>"GBP"</item>
+    </string-array>
+</resources>
