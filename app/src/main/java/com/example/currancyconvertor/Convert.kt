@@ -24,17 +24,24 @@ class Convert() {
                 override fun onResponse(call: Call, response: Response) {
                     response.use {
                         if (!response.isSuccessful) {
-                            throw IOException("Unexpected code $response")
+                            coroutine.resumeWithException(IOException("Unexpected code $response"))
+                            return
                         }
 
-                        response.body?.string()?.let { json ->
-                            val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-                            val jsonAdapter = moshi.adapter(CurrencyData::class.java)
+                        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+                        val jsonAdapter = moshi.adapter(CurrencyData::class.java)
 
+                        val json = response.body?.string()
+                        if (json != null) {
                             val data = jsonAdapter.fromJson(json)
+
                             if (data != null) {
                                 coroutine.resume(process(data))
+                            } else {
+                                coroutine.resumeWithException(IOException("Failed to parse json"))
                             }
+                        } else {
+                            coroutine.resumeWithException(IOException("Json is empty"))
                         }
                     }
                 }
