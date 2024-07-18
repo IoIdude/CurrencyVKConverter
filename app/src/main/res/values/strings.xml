@@ -13,7 +13,7 @@
     <string name="summ">Сумма</string>
     <string name="api_doesnt_work">Апи в данный момент не работает</string>
     <string name="internet_isnt_avalible">Отсвутствует подключение к интернету</string>
-    <string name="currency_converter">Конвертор валют</string>
+    <string name="currency_converter">Конвертер валют</string>
     <string name="result">%1$.2f Руб.</string>
     <string name="invalid_input">Заполните поле</string>
     <string name="error">Ошибка</string>
